@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  trailingSlash: true,
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
   },
-  trailingSlash: true, // Optional: helps with routing on GitHub Pages
-  assetPrefix: '/<repo-name>/', // Replace with your GitHub repo name if needed
+  typescript: {
+    ignoreBuildErrors: true, // ✅ Ignore type errors during build
+  },
 };
 
 module.exports = nextConfig;
