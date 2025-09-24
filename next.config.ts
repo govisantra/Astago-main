@@ -1,15 +1,11 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-  reactStrictMode: false,
-  typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
-    ignoreBuildErrors: true,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  images: {
+    unoptimized: true, // Required for static export
   },
+  trailingSlash: true, // Optional: helps with routing on GitHub Pages
+  assetPrefix: '/<repo-name>/', // Replace with your GitHub repo name if needed
 };
 
-export default nextConfig;
+module.exports = nextConfig;
